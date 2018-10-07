@@ -10,12 +10,17 @@
 
 <div id = "one">
 
-<?php
-$myvar = "this is my variable ";
 
-echo $myvar;
+    <?php
+    $file = fopen("contacts.csv","r");
 
-?>
+    while(! feof($file))
+    {
+        print_r(fgetcsv($file));
+    }
+
+    fclose($file);
+    ?>
 
 </div>
 </body>
