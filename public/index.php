@@ -1,18 +1,16 @@
-
-
-
-
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Spreadsheet Cloud API Example</title>
     </head>
-    
+    <link rel="stylesheet" type="text/css" href="extention.html">
+
 
 <body>
 
 <form name="form1" enctype="multipart/form-data" method="post" action="spreadsheet.php">
+
     <p>
         <label>Copy-paste your API Key for Bytescout.IO here</label>
         <input type="text" name="apiKey" placeholder="API Key"/>
