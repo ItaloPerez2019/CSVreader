@@ -1,10 +1,14 @@
 <?php
 
+
+
+
 main::start("contacts.csv");
 class main  {
     static public function start($filename) {
         $records = csv::getRecords($filename);
         $table = html::generateTable($records);
+        echo "$table";
     }
 }
 class html {
@@ -12,7 +16,15 @@ class html {
         $count = 0;
         $table = " ";
         foreach ($records as $record) {
-            $table .= "<html><body><table border= '1>'";
+            $table .= "<html><head> <!-- Latest compiled and minified CSS -->
+<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
+
+<!-- jQuery library -->
+<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script> </head><body><table class='table table-striped'>";
+
             if($count == 0) {
                 $array = $record->returnArray();
                 $fields = array_keys($array);
@@ -29,7 +41,7 @@ class html {
                 $table .="<tr>";
                 foreach($values as $value)
                 {
-                    $table .="<td> . $value . </td>" ;
+                    $table .= "<td>" . $value . "</td>" ;
                 }
                 $table .="</tr>";
 
