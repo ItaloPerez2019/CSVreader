@@ -10,19 +10,32 @@ class main  {
 class html {
     public static function generateTable($records) {
         $count = 0;
+        $table = " ";
         foreach ($records as $record) {
+            $table .= "<html><body><table border= '1>'";
             if($count == 0) {
                 $array = $record->returnArray();
                 $fields = array_keys($array);
-                $values = array_values($array);
-                print_r($fields);
-                print_r($values);
-            } else {
+                $table .= "<tr>" ;
+                //"echo <tr>";
+                foreach($fields as $field)
+                {
+                    $table .= "<th>" . $field . "</th>";
+                    $count = 1 ;
+                }
+                $table .="</tr>";
                 $array = $record->returnArray();
                 $values = array_values($array);
-                print_r($values);
+                $table .="<tr>";
+                foreach($values as $value)
+                {
+                    $table .="<td> . $value . </td>" ;
+                }
+                $table .="</tr>";
+
             }
-            $count++;
+            $table .="</table><body></html>";
+            return $table;
         }
     }
 }
@@ -68,3 +81,8 @@ class recordFactory {
         return $record;
     }
 }
+
+
+
+
+
