@@ -57,11 +57,12 @@ class record {
         $array = (array) $this;
         return $array;
     }
-    public function createProperty($name = 'first', $value = 'keith') {
+    public function createProperty($name = 'first', $value = 'italo') {
         $this->{$name} = $value;
     }
 }
 class recordFactory {
+
     public static function create(Array $fieldNames = null, Array $values = null) {
         $record = new record($fieldNames, $values);
         return $record;
