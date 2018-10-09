@@ -3,7 +3,7 @@
 
 
 
-main::start("contacts.csv");
+main::start("clean_data.csv");
 class main  {
     static public function start($filename) {
         $records = csv::getRecords($filename);
